@@ -1,0 +1,10 @@
+pipeline {
+    agent any
+    stages {
+        stage("build") {
+            steps {
+                sh "docker build . -t fredtheking/django_demo:${GIT_COMMIT} -t fredtheking/django_demo:latest"
+            }
+        }
+    }
+}
